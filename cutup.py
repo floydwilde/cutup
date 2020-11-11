@@ -30,13 +30,13 @@ for t in tokens:
         curLine.append(t)
 
 # Make horizontal cut
-hCutPt = len(lines)/2
+hCutPt = len(lines)//2
 hSections = [lines[:hCutPt], lines[hCutPt:]]
 
 # Make vertical cut
 sections = [[] for i in range(4)] # 3D list
 for i in range(4):
-    for l in hSections[i/2]:
+    for l in hSections[i//2]:
         sections[i].append([])
 
 for i in range(2):
@@ -57,4 +57,4 @@ sections.reverse()
 # Print result with line breaks
 for i in [0, 2]:
     for j in range(len(sections[i])):
-        print ' '.join(sections[i][j]), ' '.join(sections[i+1][j])
+        print(f' '.join(sections[i][j]), ' '.join(sections[i+1][j]))
